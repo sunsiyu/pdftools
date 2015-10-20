@@ -19,6 +19,6 @@ layoutmat <- function(v, equal=TRUE, ratio=ifelse(equal, rep(1, length(v)), rati
 
   v <- as.list(v)
 
-  sapply(v, function(x) rep(x, 30/x))
+  sapply(v, function(x) rep(x, ncol/x))
 }
 

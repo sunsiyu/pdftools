@@ -1,7 +1,7 @@
 Package: pdftools
 Title: Tools for graphical pdf reports
 Version: 0.90.0.9000
-Authors@R: Siyu Sun
+Authors@R: "Siyu Sun"
 Description: Collection of tools to simplify, automize the procedure to create quick and good-looking graphical pdf reports
 Depends: R (>= 3.2.2)
 License: What license is it under?
