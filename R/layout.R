@@ -11,11 +11,11 @@ scm <- function(x, y) {
   return(x / gcd(x, y) * y)
 }
 
-layoutmat <- function(v, equal=TRUE, ratio=equal)
+layoutmat <- function(v=1, equal=TRUE, ratio=equal)
 ## TODO: add non-equally distributed condition
 {
   stopifnot(is.numeric(v))
-  stopifnot(any(v>0))
+  stopifnot(all(v>0))
   v <- round(v)
 
   if(length(v) == 1)
