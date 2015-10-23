@@ -1,3 +1,8 @@
+#' Calcualte greatest common divisor of two integers
+#' 
+#' @param x, y Two integers
+#' @return The greatest common divisor
+#' @export
 gcd <- function(x, y) {
   while (x != 0) {
     tmp <- x
@@ -7,10 +12,22 @@ gcd <- function(x, y) {
   return(y)
 }
 
+#' Calcualte smallest common multiple of two integers
+#' 
+#' @param x, y Two integers
+#' @return The smallest common multiple
+#' @export
 scm <- function(x, y) {
   return(x / gcd(x, y) * y)
 }
 
+#' Calcualte the layout matrix
+#' 
+#' @param v a vector each element indicating the total number of plots in one row
+#' @param equal a logical value indicates whether the layout should be equally distributed
+#' @param ratio if equal is FALSE, supply division ratio
+#' @return A matrix which can be used as graphics::layout argument
+#' @export
 layoutmat <- function(v=1, equal=TRUE, ratio=equal)
 ## TODO: add non-equally distributed condition
 {
