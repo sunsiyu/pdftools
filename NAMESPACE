@@ -2,4 +2,5 @@
 
 export(gcd)
 export(layoutmat)
+export(plotlogo)
 export(scm)

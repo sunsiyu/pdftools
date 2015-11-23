@@ -4,8 +4,9 @@ Version: 0.90.0.9000
 Authors: "Siyu Sun"
 Description: Collection of tools to simplify, automize the procedure to create quick and good-looking graphical pdf reports
 Depends: R (>= 3.2.2)
-License: What license is it under?
-Imports: 
-  Cairo (>= 1.5)
+License: GPL-2
+Imports:
+  Cairo (>= 1.5),
+  pixmap (>= 0.4)
 LazyData: true
 Suggests: testthat
