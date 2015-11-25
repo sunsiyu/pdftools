@@ -9,4 +9,8 @@ Imports:
   Cairo (>= 1.5),
   pixmap (>= 0.4)
 LazyData: true
-Suggests: testthat
+Suggests:
+  testthat,
+  knitr,
+  rmarkdown
+VignetteBuilder: knitr

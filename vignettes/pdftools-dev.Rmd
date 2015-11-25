@@ -1,0 +1,66 @@
+---
+title: "pdftools"
+author: "Siyu Sun"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This document describes the goal, development, problems try to solve, and plans of the pdftools package.  
+
+## Goal  
+
+It is now quite convenient to use R Markdown to create dynamic documents, presentations and reports from R. While it is very suitable for literate programming and reproducible reports, it is sometimes difficult to generate high graphical quality and complicated layout pdf reports, e.g. those used for posters, weekly/monthly/quarterly summary reports, ith a template that can deliver most on a one-page or few-pages pdf.  
+
+## Development
+
+### Layout
+
+There are different ways to have multiple plots on the same figure, or, multi-panel plot.  
+
+With R base, there are three ways to do this.
+
+* `par(mfcol, mfrow)`
+* `split.window()`
+* `layout()`
+
+Method 1
+`par(mfcol, mfrow)` reference: par {graphics} Set or Query Graphical Parameters
+
+`mfcol`, `mfrow`:
+A vector of the form `c(nr, nc)`. Subsequent figures will be drawn in an nr-by-nc array on the device by columns (`mfcol`) or by rows (`mfrow`), respectively.  
+
+Side effects: in a layout with exactly two rows and cols, the base value of "`cex`" is reduced by a factor of 0.83: if ther are 3 or more of either rows or cols, the reduction factor is 0.66. Setting a layout resets the base value of cex and that of `mex` to 1.
+
+Example
+```{r eg1}
+op <- par(mar=c(0,0,0,0))
+op <- par(mfrow=c(2,2))
+plot(sin(1:10))
+plot(cos(1:10))
+plot(tan(1:10))
+plot(1:10)
+```
+
+
+However, a small problem with the plot above, the margin is too large.
+
+Extra margins are usually wasted space. So one can shrink the margin with par mar and oma..
+
+`par(mar = c(0,0,0,0))`
+
+If the content won't show up in the outer margin, need to set `par(xpd = NA)`
+
+What `par(mfrow)` cannot do: any other layout not defined with nr-by-nc array, then one can use `layout()` function.
+
+
+
+
+
+
+
+
+
